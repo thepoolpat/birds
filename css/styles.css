@@ -19,6 +19,25 @@
   --art-bg: linear-gradient(160deg, #eef2ec, #dde6df); /* illustration backdrop */
 }
 
+/* Explicit "dark" theme that simply re-asserts the light palette. This tells
+   browsers that auto-darken via prefers-color-scheme that the page handles
+   dark itself, so they stop synthesising their own (which would recolour the
+   birds and their backdrops). The guide is intentionally light in both modes. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #f4f1ea;
+    --bg-alt: #ece7db;
+    --ink: #20242b;
+    --ink-soft: #515a64;
+    --line: #d8d2c4;
+    --card: #fffdf8;
+    --accent: #2f5d50;
+    --accent-2: #b5562f;
+    --accent-soft: #e3ece8;
+    --art-bg: linear-gradient(160deg, #eef2ec, #dde6df);
+  }
+}
+
 /* Keep the schematic bird SVGs (and their backdrops) at their designed
    colours regardless of forced-colors / high-contrast modes — the colour
    blocks are the whole point of the comparison. */
